@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="title">
+        <h1>My Calculator</h1>
+    </div>
+
+    <div class="theme-toggle">
+        <button id="themeButton" onclick="toggleTheme()">🌙 Dark Mode</button>
+    </div>
+
+    <div class="calculator">
+        <div class="calculator-header">
+            <input type="text" id="display" disabled />
+        </div>
+        <div class="calculator-body">
+            <button class="clear" onclick="clearDisplay()">C</button>
+            <button class="undo" onclick="undoLast()">&#8592;</button>
+
+            <button onclick="appendToDisplay('%')">%</button>
+            <button class="operator" onclick="appendToDisplay('/')">÷</button>
+
+            <button onclick="appendToDisplay('7')">7</button>
+            <button onclick="appendToDisplay('8')">8</button>
+            <button onclick="appendToDisplay('9')">9</button>
+            <button class="operator" onclick="appendToDisplay('*')">×</button>
+
+            <button onclick="appendToDisplay('4')">4</button>
+            <button onclick="appendToDisplay('5')">5</button>
+            <button onclick="appendToDisplay('6')">6</button>
+            <button class="operator" onclick="appendToDisplay('-')">−</button>
+
+            <button onclick="appendToDisplay('1')">1</button>
+            <button onclick="appendToDisplay('2')">2</button>
+            <button onclick="appendToDisplay('3')">3</button>
+            <button class="operator" onclick="appendToDisplay('+')">+</button>
+
+            <button onclick="appendToDisplay('0')" class="zero">0</button>
+            <button onclick="appendToDisplay('.')">.</button>
+            <button class="equal" onclick="calculateResult()">=</button>
+        </div>
+    </div>
+
+    <script>
+        let displayHistory = [];
+        let isDarkMode = false;
+
+        function clearDisplay() {
+            displayHistory = [];
+            document.getElementById('display').value = '';
+        }
+
+        function appendToDisplay(value) {
+            const display = document.getElementById('display');
+            displayHistory.push(display.value);
+            display.value += value;
+        }
+
+        function undoLast() {
+            const display = document.getElementById('display');
+            if (displayHistory.length > 0) {
+                display.value = displayHistory.pop();
+            } else {
+                display.value = '';
+            }
+        }
+
+        function calculateResult() {
+            const display = document.getElementById('display');
+            try {
+                displayHistory.push(display.value);
+                display.value = eval(display.value.replace('÷', '/').replace('×', '*'));
+            } catch (e) {
+                display.value = 'Error';
+            }
+        }
+
+        function toggleTheme() {
+            const body = document.body;
+            const themeButton = document.getElementById('themeButton');
+
+            isDarkMode = !isDarkMode;
+            if (isDarkMode) {
+                body.classList.add('dark-mode');
+                themeButton.textContent = '☀️ Light Mode';
+            } else {
+                body.classList.remove('dark-mode');
+                themeButton.textContent = '🌙 Dark Mode';
+            }
+        }
+    </script>
+<footer>
+    <p>&copy; 2024 All Rights Reserved</p>
+</footer>
+
+</body>
+</html>

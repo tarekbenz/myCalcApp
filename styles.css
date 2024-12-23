@@ -1,0 +1,342 @@
+/* General Styles */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    background: linear-gradient(45deg, #ff0008, #fad0c4, #ff06ee, #fbc2eb);
+    background-size: 400% 400%;
+    animation: gradientBackground 15s ease infinite;
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+    background: linear-gradient(45deg, #003d99, #00899b, #000d6e, #006741);
+    background-size: 400% 400%;
+    animation: gradientBackground 15s ease infinite;
+}
+
+body.dark-mode .calculator {
+    background: rgba(50, 50, 50, 0.9);
+    color: white;
+}
+
+body.dark-mode .calculator-header {
+    background: #333;
+}
+
+body.dark-mode .calculator-header input {
+    color: white;
+}
+
+body.dark-mode .calculator-body button {
+    background-color: #444;
+    color: white;
+}
+
+body.dark-mode .calculator-body button:hover {
+    background-color: #555;
+}
+
+body.dark-mode .calculator-body .operator {
+    background-color: #ffa500;
+    color: white;
+}
+
+body.dark-mode .calculator-body .operator:hover {
+    background-color: #e69500;
+}
+
+body.dark-mode .calculator-body .equal {
+    background-color: #4CAF50;
+    color: white;
+}
+
+body.dark-mode .calculator-body .equal:hover {
+    background-color: #3e8e41;
+}
+
+body.dark-mode .calculator-body .clear {
+    background-color: #ff4d4d;
+    color: white;
+}
+
+body.dark-mode .calculator-body .clear:hover {
+    background-color: #e63939;
+}
+
+body.dark-mode .calculator-body .undo {
+    background-color: #ffbb33;
+    color: white;
+}
+
+body.dark-mode .calculator-body .undo:hover {
+    background-color: #e6a322;
+}
+
+/* Calculator Container */
+.calculator {
+    background: rgba(255, 255, 255, 0.9); /* Transparent white */
+    border-radius: 20px;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
+    width: 500px; /* Increased width */
+    overflow: hidden;
+    padding: 20px; /* Added padding */
+}
+
+/* Calculator Header */
+.calculator-header {
+    background: #4CAF50;
+    color: white;
+    text-align: right;
+    padding: 30px; /* Increased padding */
+    border-radius: 10px;
+}
+
+.calculator-header input {
+    width: 100%;
+    border: none;
+    font-size: 2.5em; /* Increased font size */
+    background: transparent;
+    color: white;
+    text-align: right;
+    outline: none;
+}
+
+/* Calculator Body */
+.calculator-body {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px; /* Increased gap */
+    padding: 30px 0; /* Added vertical padding */
+}
+
+.calculator-body button {
+    height: 80px; /* Increased height */
+    border: none;
+    border-radius: 15px; /* Larger border radius */
+    font-size: 1.5em; /* Increased font size */
+    cursor: pointer;
+    transition: all 0.2s ease;
+    background-color: #f1f1f1;
+    color: #333;
+}
+
+.calculator-body button:hover {
+    background-color: #ddd;
+}
+
+/* Updated color for Percentage Button */
+.calculator-body .operator {
+    background-color: #ffbb33; /* Same as undo button */
+    color: #ffbb33;
+}
+
+.calculator-body .operator:hover {
+    background-color: #e6a322; /* Same hover color as undo button */
+}
+
+/* Other buttons remain the same */
+.calculator-body .equal {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.calculator-body .equal:hover {
+    background-color: #3e8e41;
+}
+
+.calculator-body .clear {
+    background-color: #ff4d4d;
+    color: white;
+}
+
+.calculator-body .clear:hover {
+    background-color: #e63939;
+}
+
+.calculator-body .undo {
+    background-color: #ffbb33;
+    color: white;
+}
+
+.calculator-body .undo:hover {
+    background-color: #e6a322;
+}
+
+.calculator-body .zero {
+    grid-column: span 2;
+    background-color: #f1f1f1;
+    color: #333;
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+    text-align: center;
+    margin: 20px 0; /* Increased margin */
+}
+
+.theme-toggle button {
+    padding: 15px 30px; /* Increased button size */
+    font-size: 1.2em; /* Increased font size */
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: #555;
+    color: white;
+    transition: background-color 0.3s;
+}
+
+.theme-toggle button:hover {
+    background-color: #777;
+}
+/* Title Styles */
+.title {
+    text-align: center;
+    margin-bottom: 20px; /* Adds space below the title */
+}
+
+.title h1 {
+    font-size: 2.5em; /* Increases the font size */
+    color: #f8f8f8; /* Dark color for the title */
+    font-family: 'Arial', sans-serif; /* The same font as the rest of the page */
+    margin: 0; /* Removes default margin */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Adds a slight shadow effect to the title */
+}
+/* Calculator Container */
+.calculator {
+    background: rgba(255, 255, 255, 0.9); /* Transparent white */
+    border-radius: 15px; /* Reduced radius for a sharper look */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* Reduced shadow size */
+    width: 350px; /* Reduced width */
+    overflow: hidden;
+    padding: 15px; /* Reduced padding */
+}
+
+/* Calculator Header */
+.calculator-header {
+    background: #4CAF50;
+    color: white;
+    text-align: right;
+    padding: 15px; /* Reduced padding */
+    border-radius: 8px; /* Slightly smaller border radius */
+}
+
+.calculator-header input {
+    width: 100%;
+    border: none;
+    font-size: 2em; /* Slightly reduced font size */
+    background: transparent;
+    color: white;
+    text-align: right;
+    outline: none;
+}
+
+/* Calculator Body */
+.calculator-body {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px; /* Reduced gap between buttons */
+    padding: 20px 0; /* Reduced vertical padding */
+}
+
+.calculator-body button {
+    height: 60px; /* Reduced height of the buttons */
+    border: none;
+    border-radius: 12px; /* Reduced border radius */
+    font-size: 1.2em; /* Reduced font size */
+    cursor: pointer;
+    transition: all 0.2s ease;
+    background-color: #f1f1f1;
+    color: #333;
+}
+
+.calculator-body button:hover {
+    background-color: #ddd;
+}
+
+.calculator-body .operator {
+    background-color: #ffa500;
+    color: white;
+}
+
+.calculator-body .operator:hover {
+    background-color: #e69500;
+}
+
+.calculator-body .equal {
+    background-color: #4CAF50;
+    color: white;
+    grid-column: span 1;
+}
+
+.calculator-body .equal:hover {
+    background-color: #3e8e41;
+}
+
+.calculator-body .clear {
+    background-color: #ff4d4d;
+    color: white;
+}
+
+.calculator-body .clear:hover {
+    background-color: #e63939;
+}
+
+.calculator-body .undo {
+    background-color: #ffbb33;
+    color: white;
+}
+
+.calculator-body .undo:hover {
+    background-color: #e6a322;
+}
+
+.calculator-body .zero {
+    grid-column: span 2;
+    background-color: #f1f1f1;
+    color: #333;
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+    text-align: center;
+    margin: 15px 0; /* Reduced margin */
+}
+
+.theme-toggle button {
+    padding: 10px 20px; /* Reduced padding */
+    font-size: 1em; /* Reduced font size */
+    border: none;
+    border-radius: 8px; /* Reduced border radius */
+    cursor: pointer;
+    background-color: #555;
+    color: white;
+    transition: background-color 0.3s;
+}
+
+.theme-toggle button:hover {
+    background-color: #777;
+}
+/* Footer Styling */
+footer {
+    position: absolute;
+    bottom: 10px;
+    text-align: center;
+    width: 100%;
+    font-size: 1em;
+    color: #333;
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.9em; /* Slightly smaller text size */
+}
+
+body.dark-mode footer p {
+    color: white; /* White text in dark mode */
+}
+
